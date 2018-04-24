@@ -5,11 +5,8 @@
  */
 package Presentation;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import static java.lang.System.in;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -47,10 +44,21 @@ public class main {
                 System.out.println("When I am in state " + state + " and read character "
                         + num2Char(i) +" what state do I jump to?");
                 ruleArr[j][i] = input.nextInt();
-                System.out.println(i);
-                System.out.println(j);
+
             }
         }
+
+        System.out.println("Here are the rules you entered as I understand");
+        for (int i = 1; i < letterCount+1; i++) {
+            for (int j = 1; j < stateCount+1; j++) {
+                state = j;
+                System.out.println("When I am in state " + state + " and read character "
+                        + num2Char(i) +" the state I jump to is "+ruleArr[j][i]);
+                
+
+            }
+        }
+
         
         // for debug
         for (int i = 0; i < 5; i++) {
